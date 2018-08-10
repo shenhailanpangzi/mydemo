@@ -1,4 +1,4 @@
-package com.example.lambda;
+package com.example.java8Test;
 
 import org.junit.Test;
 
@@ -81,7 +81,7 @@ public class FunctionalInterfaceDemo {
 
         Supplier<String> supplier = () -> new String("我是supplier接口！！");
 //        输出
-        System.out.println(function);
+        System.out.println(function.apply(123));
         consumer.accept("haha");
         System.out.println(predicate.test(""));
         System.out.println(supplier.get());

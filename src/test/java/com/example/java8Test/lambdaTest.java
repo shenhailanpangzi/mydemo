@@ -1,4 +1,4 @@
-package com.example.lambda;
+package com.example.java8Test;
 
 import org.junit.Test;
 
@@ -112,7 +112,7 @@ public class lambdaTest {
             System.out.print(player + "; ");
         }
 
-        // 使用 lambda 表达式以及函数操作(functional operation)
+        // 使用 java8Test 表达式以及函数操作(functional operation)
         players.forEach((player) -> System.out.print(player + "; "));
 
         // 在 Java 8 中使用双冒号操作符(double colon operator)
@@ -132,7 +132,7 @@ public class lambdaTest {
             }
         }).start();
 
-        // 1.2使用 lambda expression
+        // 1.2使用 java8Test expression
         Thread thread = new Thread(() -> System.out.println("Hello world !"));
         thread.start();
 
@@ -144,7 +144,7 @@ public class lambdaTest {
             }
         };
 
-        // 2.2使用 lambda expression
+        // 2.2使用 java8Test expression
         Runnable race2 = () -> System.out.println("Hello world !");
 
         // 直接调用 run 方法(没开新线程哦!)

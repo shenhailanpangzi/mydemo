@@ -1,0 +1,4 @@
+Map：key-value 的键值对，key 不允许重复，value 可以
+　　1、严格来说 Map 并不是一个集合，而是两个集合之间 的映射关系。
+　　2、这两个集合没每一条数据通过映射关系，我们可以看成是一条数据。即 Entry(key,value）。Map 可以看成是由多个 Entry 组成。
+    3、因为 Map 集合即没有实现于 Collection 接口，也没有实现 Iterable 接口，所以不能对 Map 集合进行 for-each 遍历。

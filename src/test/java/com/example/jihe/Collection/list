@@ -1,0 +1,32 @@
+同时List接口又有两个常用的实现类ArrayList和LinkedList
+    1)ArrayList:
+      ArrayList数组线性表的特点为:类似数组的形式进行存储，因此它的随机访问速度极快。
+      ArrayList数组线性表的缺点为:不适合于在线性表中间需要频繁进行插入和删除操作。因为每次插入和删除都需要移动数组中的元素。
+      可以这样理解ArrayList就是基于数组的一个线性表，只不过数组的长度可以动态改变而已。
+      a.如果在初始化ArrayList的时候没有指定初始化长度的话，默认的长度为10.
+      b.ArrayList在增加新元素的时候如果超过了原始的容量的话，ArrayList扩容ensureCapacity的方案为“原始容量*3/2+1"哦。
+      c.ArrayList是线程不安全的，在多线程的情况下不要使用。
+如果一定在多线程使用List的，您可以使用Vector，因为Vector和ArrayList基本一致，区别在于Vector中的绝大部分方法都
+使用了同步关键字修饰，这样在多线程的情况下不会出现并发错误哦，还有就是它们的扩容方案不同，ArrayList是通过原始
+容量*3/2+1,而Vector是允许设置默认的增长长度，Vector的默认扩容方式为原来的2倍。
+切记Vector是ArrayList的多线程的一个替代品。
+      d.ArrayList实现遍历的几种方法
+ 2)LinkedList
+       LinkedList的链式线性表的特点为: 适合于在链表中间需要频繁进行插入和删除操作。
+       LinkedList的链式线性表的缺点为: 随机访问速度较慢。查找一个元素需要从头开始一个一个的找。速度你懂的。
+      可以这样理解LinkedList就是一种双向循环链表的链式线性表，只不过存储的结构使用的是链式表而已。
+      a.LinkedList和ArrayList的区别和联系
+      ArrayList数组线性表的特点为:类似数组的形式进行存储，因此它的随机访问速度极快。
+      ArrayList数组线性表的缺点为:不适合于在线性表中间需要频繁进行插入和删除操作。因为每次插入和删除都需要移动数组中的元素。
+       LinkedList的链式线性表的特点为: 适合于在链表中间需要频繁进行插入和删除操作。
+       LinkedList的链式线性表的缺点为: 随机访问速度较慢。查找一个元素需要从头开始一个一个的找。速度你懂的。
+      b.LinkedList的内部实现
+         对于这个问题，你最好看一下jdk中LinkedList的源码。这样你会醍醐灌顶的。
+         这里我大致说一下:
+         LinkedList的内部是基于双向循环链表的结构来实现的。在LinkedList中有一个类似于c语言中结构体的Entry内部类。
+         在Entry的内部类中包含了前一个元素的地址引用和后一个元素的地址引用类似于c语言中指针。
+     c.LinkedList不是线程安全的
+         注意LinkedList和ArrayList一样也不是线程安全的，如果在对线程下面访问可以自己重写LinkedList
+         然后在需要同步的方法上面加上同步关键字synchronized
+     d.LinkedList的遍历方法
+     e.LinkedList可以被当做堆栈来使用 由于LinkedList实现了接口Dueue，所以LinkedList可以被当做堆栈来使用，这个你自己研究吧。

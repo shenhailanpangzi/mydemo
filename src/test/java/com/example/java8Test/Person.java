@@ -1,4 +1,4 @@
-package com.example.lambda;
+package com.example.java8Test;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

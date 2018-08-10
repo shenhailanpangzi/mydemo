@@ -7,7 +7,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
@@ -61,12 +61,7 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-        <dependency>
-            <groupId>fakepath</groupId>
-            <artifactId>json-lib</artifactId>
-            <version>2.4</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>fakepath</groupId>
             <artifactId>fastjson</artifactId>
@@ -84,6 +79,10 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!--注意最下面的build这块一定要配置否则打jar的时候会说找不 到主类-->
+				<configuration>
+					<mainClass>com.weixin.SmallsystemApplication</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
